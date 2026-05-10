@@ -1,0 +1,288 @@
+/* ==============================
+   Базовый хедер
+   ============================== */
+.header {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: top 0.3s ease;
+}
+
+.header--scrolled {
+    top: 10px;
+}
+
+.header__inner {
+    background: var(--color-bg-header);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 205px;
+    padding: 1.3125rem 6.875rem;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    position: relative;           /* чтобы мобильное меню считало ширину от этого блока */
+}
+
+.header--scrolled .header__inner {
+    background: var(--color-bg-scroll);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Логотип ---------- */
+.header__logo {
+    width: 145px;
+    color: var(--color-text-primary);
+    font-size: var(--fs-xs);
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: color var(--transition-default);
+}
+
+.header__logo:hover {
+    color: var(--color-text-light);
+}
+
+/* ---------- Десктопная навигация ---------- */
+.header__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 67px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header__nav-link {
+    color: var(--color-text-light);
+    font-size: var(--fs-xs);
+    font-weight: 400;
+    line-height: 1.3;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 0;
+    transition: color var(--transition-default);
+    position: relative;
+}
+
+.header__nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-text-primary);
+    transition: width var(--transition-default);
+}
+
+.header__nav-link:hover {
+    color: var(--color-text-primary);
+}
+
+.header__nav-link:hover::after {
+    width: 100%;
+}
+
+.header__nav-link:focus-visible {
+    outline: 2px solid var(--color-text-primary);
+    outline-offset: 4px;
+}
+
+/* ==============================
+   Бургер и мобильное меню
+   ============================== */
+
+/* Бургер – по умолчанию скрыт */
+.header__burger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    position: relative;
+}
+
+/* Три полоски */
+.header__burger-line,
+.header__burger-line::before,
+.header__burger-line::after {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-text-primary);
+    transition: transform 0.3s, opacity 0.3s;
+    border-radius: 2px;
+}
+
+.header__burger-line {
+    position: relative;
+}
+
+.header__burger-line::before,
+.header__burger-line::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.header__burger-line::before {
+    top: -7px;
+}
+
+.header__burger-line::after {
+    top: 7px;
+}
+
+/* Крестик при открытии */
+.header__burger--open .header__burger-line {
+    background: transparent;
+}
+
+.header__burger--open .header__burger-line::before {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.header__burger--open .header__burger-line::after {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Выпадающее меню (под хедером, той же ширины) */
+.header__mobile-menu {
+    position: absolute;
+    top: 100%;
+    margin: 12px 16px;            /* отступ от хедера */
+    left: 0;
+    right: 0;
+    width: auto;
+    max-width: none;
+    background: var(--color-bg-burger-menu);
+    border-radius: var(--border-radius);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: visibility 0.2s, opacity 0.2s, transform 0.2s;
+}
+
+.header__mobile-menu--open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.header__mobile-list {
+    list-style: none;
+    padding: 19px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.header__mobile-link {
+    background: none;
+    border: none;
+    color: var(--color-text-light);
+    font-size: var(--fs-md);
+    font-weight: 500;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: color var(--transition-default);
+    white-space: nowrap;
+}
+
+.header__mobile-link:hover {
+    color: var(--color-text-primary);
+}
+
+.header__mobile-link:focus-visible {
+    outline: 2px solid var(--color-text-primary);
+    outline-offset: 2px;
+}
+
+.header__mobile-divider {
+    border: none;
+    border-top: 1px solid #ffffff;
+    width: 100%;
+    max-width: calc(100% - 40px);
+    margin: 0;
+}
+
+.header__mobile-contacts {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.header__mobile-contact-item {
+    color: var(--color-text-light);
+    font-size: var(--fs-md);
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+}
+/* ==============================
+   Адаптив
+   ============================== */
+@media (max-width: 768px) {
+    .header {
+        top: 10px;
+    }
+
+    .header--scrolled {
+        top: 0;
+    }
+
+    /* Хедер в строку: бургер слева, логотип справа */
+    .header__inner {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+        margin: auto 16px;
+        padding: 1rem;
+        border-radius: 20px;
+    }
+
+    .header__burger {
+        display: block;
+    }
+
+    .header__nav {
+        display: none;             /* скрываем десктопную навигацию */
+    }
+
+    .header__logo {
+        width: auto;
+        text-align: right;
+    }
+}
+
+/* Совсем маленькие экраны */
+@media (max-width: 480px) {
+    .header__inner {
+        padding: 0.8rem;
+        margin: 0;
+    }
+
+    .header__mobile-link {
+        font-size: var(--fs-md);
+    }
+    .header__mobile-list{
+        width: 100%;
+    }
+}
