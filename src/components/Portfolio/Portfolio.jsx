@@ -22,7 +22,7 @@ const Portfolio = () => {
 
     return (
         <section id="portfolio" className="section portfolio fade-up">
-            <div className="container">
+            <div className="container portfolio-container">
                 <h2 className="portfolio__title">Портфолио</h2>
 
                 {/* Баннер */}

@@ -121,26 +121,25 @@
 
 /* Телефоны */
 @media (max-width: 576px) {
-    .services__container {
-        gap: 40px;
+    .services{
+        padding: 71px 16px;
     }
-
-    .services__title {
-        font-size: var(--fs-xl);
+    .services__title{
+        font-size: 28px;
     }
-
-    .services__item {
-        padding-left: 50px;
+    .services__item-title{
+        font-size: 20px;
     }
-
-    .services__item-title {
-        font-size: var(--fs-md);
+    .services__item-desc{
+        font-size: 16px;
     }
-
-    .services__item-desc {
-        font-size: var(--fs-sm);
+    .services__item::before {
+        width: 15px;
+        height: 15px;
     }
-
+    .services__item{
+        padding-left: 24px;
+    }
     .services__btn {
         max-width: 100%;
     }

@@ -102,9 +102,7 @@
 /* ---------- Адаптив (опционально) ---------- */
 /* Планшеты */
 @media (max-width: 992px) {
-    .stages__item--image {
-        display: none;
-    }
+
     .stages__grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -121,20 +119,19 @@
 
 /* Телефоны */
 @media (max-width: 576px) {
-    .stages__grid {
-        grid-template-columns: 1fr;
+    .stages{
+        padding-inline:16px;
+        padding-block: 38px;
+    }
+    .stages__container{
+        gap: 9px;
+    }
+    .stages__title{
+        font-size: 28px;
+    }
+    .stages__subtitle {
+        font-size: 20px;
+        padding-bottom: 31px;
     }
 
-    .stages__container {
-        gap: 30px;
-    }
-
-    .stages__item--text {
-        min-height: auto;
-        padding: 24px 20px;
-    }
-
-    .stages__item-num {
-        font-size: 32px;
-    }
 }

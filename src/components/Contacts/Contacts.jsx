@@ -9,7 +9,7 @@ const CONTACT_DATA = {
 const Contacts = () => {
     return (
         <section id="contacts" className="contacts fade-up">
-            <div className="container">
+            <div className="container contacts-container">
                 <h2 className="contacts__title">Контактная информация</h2>
             </div>
 

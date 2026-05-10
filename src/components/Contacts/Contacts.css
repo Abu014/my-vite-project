@@ -58,32 +58,39 @@
 }
 
 /* Планшеты */
-@media (max-width: 768px) {
-    .contacts__title {
-        max-width: 100%;
-        font-size: var(--fs-xl);
-        margin-bottom: 30px;
+@media (max-width: 480px) {
+    .contacts-container{
+        padding-block-start: 35px;
+        padding-inline: 16px;
+    }
+    .contacts__info-wrapper{
+        padding-block: 35px;
+        padding-inline: 16px;
+
+    }
+    .contacts__info {
+        display: flex;
+        justify-content: center;
+        padding: 6px 0;
     }
 
     .contacts__card {
-        max-width: 100%;
-        margin-left: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
     }
-
-    .contacts__name,
-    .contacts__link {
-        font-size: var(--fs-lg);
+    .contacts__title{
+        font-size: 28px;
+        text-align: center;
     }
-}
-
-/* Телефоны */
-@media (max-width: 480px) {
-    .contacts__info {
-        padding: 30px 0;
+    .contacts__name{
+        font-size: 24px;
+        text-align: center;
     }
-
-    .contacts__name,
-    .contacts__link {
-        font-size: var(--fs-md);
+    .contacts__link{
+        font-size: 24px;
+        text-align: center;
     }
 }

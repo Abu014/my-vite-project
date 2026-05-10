@@ -88,26 +88,36 @@
 }
 
 .portfolio-poster-info {
-    display: inline-grid;
+    display:grid;
     grid-template-columns:repeat(4,auto);
     grid-template-rows: auto auto;
 }
-.itemP1{
-    margin-right: 130px;
+.itemP1 {
+    grid-column: span 2;  /* Занимает колонки 1-2 */
+    grid-row: 1 / 2;      /* Явно указываем первую строку */
     align-self: flex-end;
     margin-bottom: 30px;
+    margin-right: 130px;   /* Если нужен отступ справа */
 }
-.itemP2{
-    grid-column: span 2;
+
+/* Описание - занимает первые 2 колонки во 2-й строке */
+.itemP2 {
+    grid-column: span 2;  /* Занимает колонки 1-2 */
+    grid-row: 2 / 3;      /* Вторая строка */
 }
-.itemP3{
-    margin-left: 109px;
+
+/* Первое изображение - 3-я колонка, на всю высоту (2 строки) */
+.itemP3 {
+    grid-column: 3 / 4;   /* Только 3-я колонка */
+    grid-row: span 2;     /* Растягиваем на 2 строки */
+    margin-left: 109px;   /* Ваш отступ */
 }
-.itemP3, .itemP4{
-    grid-row: span 2;
-}
-.itemP4{
-    margin-left: 21px;
+
+/* Второе изображение - 4-я колонка, на всю высоту (2 строки) */
+.itemP4 {
+    grid-column: 4 / 5;   /* Только 4-я колонка */
+    grid-row: span 2;     /* Растягиваем на 2 строки */
+    margin-left: 21px;    /* Ваш отступ */
 }
 
 
@@ -220,6 +230,12 @@
 /*}*/
 
 @media (max-width: 480px) {
+    .portfolio-container{
+        padding: 0 16px;
+    }
+    .portfolio__title{
+        font-size: 28px;
+    }
     .portfolio-banner{
 
         grid-template-areas:
@@ -293,8 +309,20 @@
     }
 
     .portfolio-other{
+        padding: 0 16px;
         display: grid;
         grid-template-columns:repeat(2,1fr);
+        grid-template-rows: 215px 215px;
+    }
+    .portfolio__other-btn{
+        height: 215px;
+        font-size: 20px;
+        width: 172px; /* Не меняем ширину */
+        white-space: normal;
+        justify-self: center;
+    }
+    .portfolio__other-img{
+        object-fit: contain;
     }
 
 }
