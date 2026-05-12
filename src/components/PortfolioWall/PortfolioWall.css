@@ -41,7 +41,6 @@
 .portfolio-wall__tabs {
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 .portfolio-wall__tab {
@@ -114,6 +113,7 @@
     width: 100%;
     height: auto;
     object-fit: contain;
+    border-radius: 10px;
 }
 
 .portfolio-wall__card-title {
@@ -139,8 +139,6 @@
     font: inherit;                 /* наследует размер и шрифт от родителя */
     color: var(--color-text-primary);
     cursor: pointer;
-    text-decoration: underline;    /* подчеркивание как у ссылки */
-    text-underline-offset: 2px;
     transition: opacity 0.2s;}
 
 
@@ -175,31 +173,33 @@
 }
 
 @media (max-width: 576px) {
-    .portfolio-wall__container {
-        gap: 30px;
-    }
-
-    .portfolio-wall__tabs {
-        flex-direction: column;
+    .portfolio-wall__container{
         gap: 10px;
     }
-
-    .portfolio-wall__tab {
-        text-align: center;
-        padding: 10px 20px;
+    .portfolio-wall{
+        padding-inline: 16px;
     }
-
-    .portfolio-wall__images {
-        padding: 20px;
-        flex-direction: column;
-        align-items: center;
+    .portfolio-wall__title{
+        font-size: 28px;
     }
+    .material-symbols-outlined{
+        font-size: 20px;
 
-    .portfolio-wall__img {
-        max-width: 200px;
+
     }
-
-    .portfolio-wall__card-desc {
-        font-size: var(--fs-sm);
+    .portfolio-wall__tabs{
+        display: flex;
+        gap: 20px;
+    }
+    .portfolio-wall__tab{
+        padding: 7px 10px;
+        font-size: 12px;
+        border-radius: 20px 0 20px 20px;
+    }
+    .portfolio-wall__card-title{
+        font-size: 12px;
+    }
+    .portfolio-wall__card-desc{
+        font-size: 16px;
     }
 }

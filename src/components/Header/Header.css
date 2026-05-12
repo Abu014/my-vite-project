@@ -194,7 +194,7 @@
 }
 
 .header__mobile-link {
-    background: none;
+    background: var(--color-bg-header);
     border: none;
     color: var(--color-text-light);
     font-size: var(--fs-md);
@@ -276,7 +276,7 @@
 @media (max-width: 480px) {
     .header__inner {
         padding: 0.8rem;
-        margin: 0;
+        margin: 16px;
     }
 
     .header__mobile-link {

@@ -262,13 +262,5 @@ body {
     }
 }
 
-@media (max-width: 480px) {
-    .section {
-        padding: 30px 16px;
-    }
-    .body{
-        width: 100%;
-    }
 
-}
 
