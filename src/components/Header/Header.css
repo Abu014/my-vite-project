@@ -167,7 +167,7 @@
     right: 0;
     width: auto;
     max-width: none;
-    background: var(--color-bg-burger-menu);
+    background: var(--color-bg-scroll);
     border-radius: var(--border-radius);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     z-index: 999;
@@ -194,7 +194,7 @@
 }
 
 .header__mobile-link {
-    background: var(--color-bg-header);
+    background: none;
     border: none;
     color: var(--color-text-light);
     font-size: var(--fs-md);
