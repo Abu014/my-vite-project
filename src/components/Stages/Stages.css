@@ -144,7 +144,9 @@
     .stages__item--image{
         min-height: 215px;
     }
-
+    .stages__item{
+        height: auto;
+    }
 
 
 }
