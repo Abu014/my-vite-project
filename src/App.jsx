@@ -2,6 +2,8 @@ import Screen from "./components/Screen.jsx";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from "./components/Header/Header.jsx";
 import PortfolioWall from "./components/PortfolioWall/ PortfolioWall.jsx";
+import Docs from "./components/Documents/Docs.jsx";
+import PortfolioItem from "./components/PortfolioWall/PortfolioItem/PortfolioItem.jsx";
 
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
         <Routes>
             <Route path="/" element={<Screen />} />
             <Route path="/portfolio-wall" element={<PortfolioWall />} />
+            <Route path="/documents" element={<Docs/>}/>
+            <Route path="/portfolio-item" element={<PortfolioItem/>}/>
         </Routes>
     </BrowserRouter>
   )

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PortfolioWall.css';
-import {SPORT_WORKS} from "../../data/ portfolioWorks.js";
+import {SPORT_WORKS} from "../../data/portfolioWorks.js";
 
 
-
+const PORTFOLIO_ITEM_PATH = '/portfolio-item';
 const TABS = [
     { id: 'sport', label: 'Спортивные направления' },
     { id: 'other', label: 'Другие направления' },
@@ -62,7 +62,7 @@ const PortfolioWall = () => {
                                                 />
                                         <h3 className="portfolio-wall__card-title">{work.title}</h3>
                                         <div className="portfolio-wall__card-desc">{work.description}
-                                            <button type="button" className="portfolio-wall__card-btn">Подробнее...</button>
+                                            <button type="button" className="portfolio-wall__card-btn" onClick={()=>navigate(PORTFOLIO_ITEM_PATH)}>Подробнее...</button>
                                         </div>
                                     </article>
                                 ))}

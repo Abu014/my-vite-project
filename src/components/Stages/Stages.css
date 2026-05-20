@@ -120,6 +120,9 @@
         padding-inline:16px;
         padding-block: 38px ;
     }
+    .stages__item{
+        flex-direction: column;
+    }
     .stages__container{
         gap: 9px;
     }

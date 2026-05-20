@@ -19,10 +19,6 @@ const Header = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    // Определяем, находимся ли мы на странице PortfolioWall
-    const isPortfolioWall = location.pathname === '/portfolio-wall';
-
-    // Скролл к секции (работает только на главной, где есть секции)
     const scrollToSection = useCallback((sectionId) => {
         const section = document.getElementById(sectionId);
         if (section) {
@@ -31,30 +27,28 @@ const Header = () => {
         }
     }, []);
 
-    // Обработчик клика по навигационным кнопкам
     const handleNavClick = (sectionId) => {
-        if (isPortfolioWall) {
-            // На странице PortfolioWall: переходим на главную с якорем
-            navigate(`/#${sectionId}`);
+        if (sectionId === 'documents') {
+            navigate('/documents');
         } else {
-            // На главной: просто скроллим
-            scrollToSection(sectionId);
+            if (location.pathname === '/') {
+                scrollToSection(sectionId);
+            } else {
+                navigate(`/#${sectionId}`);
+            }
         }
-        setIsMenuOpen(false)    ;
+        setIsMenuOpen(false);
     };
 
-    // Обработчик клика по логотипу
     const handleLogoClick = () => {
-        if (isPortfolioWall) {
-            // На странице PortfolioWall: просто возвращаемся на главную
-            navigate('/');
-        } else {
-            // На главной: скроллим вверх
+        if (location.pathname === '/') {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            navigate('/');
         }
     };
 
-    // Эффект для отслеживания скролла (для фона хедера)
+    // Эффект скролла для фона
     useEffect(() => {
         let ticking = false;
         const handleScroll = () => {
@@ -71,11 +65,10 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Если страница загружена с хешем (например, /#portfolio), прокручиваем к секции
+    // Хеш при загрузке
     useEffect(() => {
         if (location.pathname === '/' && location.hash) {
             const id = location.hash.replace('#', '');
-            // Небольшая задержка, чтобы DOM отрисовался
             setTimeout(() => scrollToSection(id), 100);
         }
     }, [location, scrollToSection]);
@@ -102,22 +95,27 @@ const Header = () => {
                         ))}
                     </ul>
                 </nav>
-                <button className={`header__burger${isMenuOpen ? ' header__burger--open' : ''}`}
-                        type="button"
-                        aria-expanded={isMenuOpen}
-                        aria-controls={"mobile-menu"}
-                        aria-label={isMenuOpen ? 'закрыть меню' : 'открыть меню'}
-                        onClick={() => setIsMenuOpen(prev => !prev)}
-                >
-                    <span className="header__burger-line"/></button>
-            </div>
-            <div id="mobile-menu"
-                 className={`header__mobile-menu${isMenuOpen ? ' header__mobile-menu--open' : ''}`}
-                 aria-hidden={!isMenuOpen}
-                 onClick={() => setIsMenuOpen(false)}>
-                <nav aria-label="Мобильная навигация"
-                >
 
+                <button
+                    className={`header__burger${isMenuOpen ? ' header__burger--open' : ''}`}
+                    type="button"
+                    aria-expanded={isMenuOpen}
+                    aria-controls="mobile-menu"
+                    aria-label={isMenuOpen ? 'Закрыть меню' : 'Открыть меню'}
+                    onClick={() => setIsMenuOpen((prev) => !prev)}
+                >
+                    <span className="header__burger-line" />
+                </button>
+            </div>
+
+            {/* Мобильное меню */}
+            <div
+                id="mobile-menu"
+                className={`header__mobile-menu${isMenuOpen ? ' header__mobile-menu--open' : ''}`}
+                aria-hidden={!isMenuOpen}
+                onClick={() => setIsMenuOpen(false)}
+            >
+                <nav aria-label="Мобильная навигация">
                     <ul className="header__mobile-list">
                         {NAV_ITEMS.map((item) => (
                             <li key={item.id}>
@@ -127,12 +125,10 @@ const Header = () => {
                                     onClick={() => handleNavClick(item.id)}
                                 >
                                     {item.label}
-
                                 </button>
-
                             </li>
                         ))}
-                        <hr className="header__mobile-divider"/>
+                        <hr className="header__mobile-divider" />
                         <div className="header__mobile-contacts">
                             <p className="header__mobile-contact-item">8-(961)-980-73-80</p>
                             <p className="header__mobile-contact-item">kolodeev.1998@mail.ru</p>
@@ -140,7 +136,6 @@ const Header = () => {
                         </div>
                     </ul>
                 </nav>
-
             </div>
         </header>
     );
