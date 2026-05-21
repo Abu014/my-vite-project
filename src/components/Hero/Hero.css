@@ -85,12 +85,10 @@
 
 /* Телефоны */
 @media (max-width: 576px) {
-    .hero {
-        padding-top: 100px; /* чтобы не залезало под хедер */
-    }
+
 
     .hero-content {
-        padding-block: 100px 45px;
+        padding-block: 107px 45px;
         padding-inline: 16px;
         gap: 85px;
     }

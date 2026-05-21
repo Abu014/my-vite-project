@@ -11,6 +11,14 @@ const NAV_ITEMS = [
     { id: 'documents', label: 'Документы' },
 ];
 
+const NAV_BURGER_ITEMS = [
+    { id: 'hero', label: 'Главная' },
+    { id: 'portfolio', label: 'Портфолио' },
+    { id: 'stages', label: 'Этапы' },
+    { id: 'services', label: 'Услуги' },
+    { id: 'documents', label: 'Документы' },
+]
+
 const HEADER_OFFSET = 120;
 
 const Header = () => {
@@ -117,7 +125,7 @@ const Header = () => {
             >
                 <nav aria-label="Мобильная навигация">
                     <ul className="header__mobile-list">
-                        {NAV_ITEMS.map((item) => (
+                        {NAV_BURGER_ITEMS.map((item) => (
                             <li key={item.id}>
                                 <button
                                     className="header__mobile-link"

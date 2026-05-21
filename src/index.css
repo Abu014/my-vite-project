@@ -254,13 +254,6 @@ body {
     }
 }
 
-/* Адаптивные отступы для секций */
-@media (max-width: 768px) {
-    .section {
-        padding: 40px 0;
-        scroll-margin-top: 80px; /* меньше, т.к. хедер ниже */
-    }
-}
 
 
 

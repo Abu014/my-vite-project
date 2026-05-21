@@ -42,7 +42,8 @@ const Portfolio = () => {
                     <div className="portfolio-poster-info">
                             <h3 className="portfolio__project-poster-title itemP1">Рекламный постер для социальных сетей</h3>
                             <p className="portfolio__project-poster-desc itemP2">
-                                Когда рекламный материал выглядит системно и качественно, бренд воспринимается как более серьёзный и надёжный. Это формат «здесь и сейчас». Хороший баннер превращает внимание в конкретное действие.
+                                Когда рекламный материал выглядит системно и качественно, бренд воспринимается как более серьёзный и надёжный.<br/><br/>
+                                Это формат «здесь и сейчас». Хороший баннер превращает внимание в конкретное действие.
                             </p>
                             <img src={SPORT_WORKS[1].examplImage} alt="Пример постера" className="portfolio__img--example itemP3" />
                             <img src={SPORT_WORKS[1].mainImage} alt="Макет постера на iPad Mini" className="portfolio__img--main portfolio__img--main--light itemP4" />

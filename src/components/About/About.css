@@ -91,6 +91,7 @@
     .about__subtitle {
         font-size: var(--fs-md);
         margin-bottom: 65px;
+        font-weight: 600;
     }
 
     .about__grid-item {
