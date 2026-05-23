@@ -1,6 +1,5 @@
 .services {
     background: var(--color-bg-dark);
-    padding: 80px 0;
 }
 
 .services__container {
@@ -122,7 +121,10 @@
 /* Телефоны */
 @media (max-width: 576px) {
     .services{
-        padding: 71px 16px;
+        padding-inline:16px;
+    }
+    .services__container{
+        gap: 37px;
     }
     .services__title{
         font-size: 28px;

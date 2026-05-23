@@ -277,7 +277,6 @@
 @media (max-width: 480px) {
     .header__inner {
         padding: 0.8rem;
-        margin: 16px;
     }
 
     .header__mobile-link {
