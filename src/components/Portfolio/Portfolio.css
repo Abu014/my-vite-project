@@ -238,6 +238,7 @@
     .portfolio__title{
         font-size: 28px;
         margin-bottom: 30px;
+        font-weight: 600;
     }
     .portfolio-banner{
         width: 100%;
@@ -301,7 +302,7 @@
     }
     .portfolio__img--example{
         width:100%;
-        height: auto;
+        height: 100%;
         margin: 0;
         justify-self:center;
 
