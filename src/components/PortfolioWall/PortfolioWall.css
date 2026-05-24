@@ -58,6 +58,7 @@
 
 .portfolio-wall__tab.active {
     background: rgba(236, 255, 42, 1);
+
 }
 
 .portfolio-wall__tab:focus-visible {
@@ -192,15 +193,11 @@
         justify-content: space-between;
         gap: 20px;
     }
-    .portfolio-wall__tabs :nth-child(2){
-        border-radius: 20px 20px 20px 0;
-
-    }
     .portfolio-wall__tab{
         width: 100%;
         padding: 7px 10px;
         font-size: 12px;
-        border-radius: 20px 0 20px 20px;
+        border-radius: 20px;
     }
     .portfolio-wall__card-title{
         font-size: 12px;

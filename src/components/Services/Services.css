@@ -119,12 +119,12 @@
 }
 
 /* Телефоны */
-@media (max-width: 576px) {
+@media (max-width: 480px) {
     .services{
         padding-inline:16px;
     }
     .services__container{
-        gap: 37px;
+        gap: 30px;
     }
     .services__title{
         font-size: 28px;

@@ -73,24 +73,24 @@
 /*}*/
 
 /* Телефоны */
-@media (max-width: 576px) {
+@media (max-width: 480px) {
     .about{
         padding-inline:16px ;
 
     }
     .about__title{
         font-size: 28px;
-        margin-bottom: 38px;
+        margin-bottom: 30px;
 
     }
     .about__grid {
         grid-template-columns: 1fr;
-        gap: 32px;
+        gap: 35px;
     }
 
     .about__subtitle {
         font-size: var(--fs-md);
-        margin-bottom: 65px;
+        margin-bottom: 30px;
         font-weight: 600;
     }
 

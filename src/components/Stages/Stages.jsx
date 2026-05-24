@@ -61,7 +61,7 @@ const STAGES = [
 
 const Stages = () => {
     return (
-        <section id="stages" className="stages fade-up">
+        <section id="stages" className="section stages fade-up">
             <div className="stages__container container">
                 <h2 className="stages__title">Этапы работы</h2>
                 <p className="stages__subtitle">Как проходит процесс моей работы</p>
