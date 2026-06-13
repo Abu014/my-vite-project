@@ -1,8 +1,8 @@
 import './Stages.css';
-import stages1 from '../../assets/stages1.png';
-import stages2 from '../../assets/stages2.png';
-import stages3 from '../../assets/stages3.png';
-import stages4 from '../../assets/stages4.png';
+import stages1 from '../../assets/stages1.jpg';
+import stages2 from '../../assets/stages2.jpg';
+import stages3 from '../../assets/stages3.jpg';
+import stages4 from '../../assets/stages4.jpg';
 
 const STAGES = [
     {

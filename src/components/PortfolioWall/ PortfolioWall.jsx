@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './PortfolioWall.css';
-import {SPORT_WORKS} from "../../data/portfolioWorks.js";
+import {OTHER_WORKS, SPORT_WORKS} from "../../data/portfolioWorks.js";
 
 
 const PORTFOLIO_ITEM_PATH = '/portfolio-item';
@@ -56,13 +56,13 @@ const PortfolioWall = () => {
                                 {SPORT_WORKS.map((work) => (
                                     <article className="portfolio-wall__card" key={work.id}>
                                                 <img
-                                                    src={work.images}
+                                                    src={work.thumbnail}
                                                     alt={work.title}
                                                     className="portfolio-wall__img"
                                                 />
                                         <h3 className="portfolio-wall__card-title">{work.title}</h3>
                                         <div className="portfolio-wall__card-desc">{work.description}
-                                            <button type="button" className="portfolio-wall__card-btn" onClick={()=>navigate(PORTFOLIO_ITEM_PATH)}>Подробнее...</button>
+                                            <button type="button" className="portfolio-wall__card-btn" onClick={() => navigate(`${PORTFOLIO_ITEM_PATH}/${work.id}`)}>Подробнее...</button>
                                         </div>
                                     </article>
                                 ))}
@@ -76,7 +76,21 @@ const PortfolioWall = () => {
                             id="panel-other"
                             className="tab-panel"
                         >
-                            <p className="portfolio-wall__empty">Здесь будут другие направления</p>
+                            <div className="portfolio-wall__grid">
+                                {OTHER_WORKS.map((work) => (
+                                    <article className="portfolio-wall__card" key={work.id}>
+                                        <img
+                                            src={work.thumbnail}
+                                            alt={work.title}
+                                            className="portfolio-wall__img"
+                                        />
+                                        <h3 className="portfolio-wall__card-title">{work.title}</h3>
+                                        <div className="portfolio-wall__card-desc">{work.description}
+                                            <button type="button" className="portfolio-wall__card-btn" onClick={() => navigate(`${PORTFOLIO_ITEM_PATH}/${work.id}`)}>Подробнее...</button>
+                                        </div>
+                                    </article>
+                                ))}
+                            </div>
                         </div>
                     )}
                 </div>

@@ -35,6 +35,8 @@
 
 /* ---------- Элемент ---------- */
 .stages__item {
+    max-width: 310px;
+    max-height: 350px;
     border-radius: var(--border-radius);
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -48,13 +50,11 @@
 }
 
 /* Карточка с картинкой */
-.stages__item--image {
-    min-height: 351px;
-}
+
 
 .stages__image {
-    height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    width: 100%;
 }
 
 /* ---------- Темы ---------- */
@@ -126,9 +126,8 @@
     }
     .stages__item{
         flex-direction: column;
-        width: 100%
-    ;
-        height: auto;
+        width: 100%;
+        height: 100%;
     }
     .stages__container{
         gap: 9px;
@@ -157,7 +156,7 @@
         margin-top: 15px;
     }
     .stages__item--image{
-        min-height: 215px;
+        max-height: 245px;
     }
 
 

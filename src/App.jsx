@@ -16,7 +16,7 @@ function App() {
             <Route path="/" element={<Screen />} />
             <Route path="/portfolio-wall" element={<PortfolioWall />} />
             <Route path="/documents" element={<Docs/>}/>
-            <Route path="/portfolio-item" element={<PortfolioItem/>}/>
+            <Route path="/portfolio-item/:workId" element={<PortfolioItem/>}/>
         </Routes>
     </BrowserRouter>
   )

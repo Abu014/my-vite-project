@@ -87,7 +87,7 @@ button:active {
 img,
 video {
     display: block;
-    max-width: 100%;
+    /*max-width: 100%;*/
     height: auto;
 }
 
@@ -252,6 +252,11 @@ body {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+
+.main-radius{
+    border-radius: 20px;
 }
 
 
