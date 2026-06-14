@@ -10,7 +10,7 @@ function App() {
 
 
   return (
-    <BrowserRouter >
+    <BrowserRouter basename="/my-vite-project">
         <Header />
         <Routes>
             <Route path="/" element={<Screen />} />
