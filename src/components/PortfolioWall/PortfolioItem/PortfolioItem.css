@@ -158,6 +158,9 @@
     .portfolio-item__content__thumbnail-wrapper {
         display: block;
     }
+    .portfolio-item__content__thumbnail{
+        margin-bottom: 26px;
+    }
     .portfolio-item__action-btn--blik{
         max-width: 100%;
         font-weight: 600;

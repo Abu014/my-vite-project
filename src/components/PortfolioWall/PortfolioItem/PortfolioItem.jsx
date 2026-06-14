@@ -31,6 +31,18 @@ const PortfolioItem = () => {
 
                         ))}
 
+                        {/* Кастомная кнопка (если есть) */}
+                        {work.actionButton && (
+                            <a
+                                href={work.actionButton.url}
+                                target={work.actionButton.target || '_self'}
+                                rel="noopener noreferrer"
+                                className={`portfolio-item__action-btn ${work.actionButton.className || ''}`}
+                            >
+                                {work.actionButton.text}
+                            </a>
+                        )}
+
                     </div>
                     {isOtherWork && (
                         <div className="portfolio-item__content__thumbnail-wrapper">
@@ -39,20 +51,17 @@ const PortfolioItem = () => {
                                 alt={work.title}
                                 className="portfolio-item__content__thumbnail"
                             />
+                            <a
+                                href={work.actionButton.url}
+                                target={work.actionButton.target || '_self'}
+                                rel="noopener noreferrer"
+                                className={`portfolio-item__action-btn ${work.actionButton.className || ''}`}
+                            >
+                                {work.actionButton.text}
+                            </a>
                         </div>
                     )}
 
-                    {/* Кастомная кнопка (если есть) */}
-                    {work.actionButton && (
-                        <a
-                            href={work.actionButton.url}
-                            target={work.actionButton.target || '_self'}
-                            rel="noopener noreferrer"
-                            className={`portfolio-item__action-btn ${work.actionButton.className || ''}`}
-                        >
-                            {work.actionButton.text}
-                        </a>
-                    )}
                     <div className="portfolio-item__content__filling">
                         <p className="portfolio-item__content__filling__title">О Проекте</p>
                         <p className="content__filling-text">{work.projectInfo.about}</p>
