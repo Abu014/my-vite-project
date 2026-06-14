@@ -153,7 +153,6 @@
     }
     .stages__item--text{
         padding:25px 16px 5px 28px ;
-        justify-content: space-between;
     }
     .stages__item-num {
         font-size: 32px;
@@ -166,9 +165,24 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        padding: 0;
     ;
     }
 
 
+}
+
+@media (max-width: 400px) {
+    .stages__item--text {
+        padding: 30px 16px 5px 28px ;
+    ;
+    }
+    .stages__item{
+        flex-direction: column;
+        width: 100%;
+        min-height: 285px;
+        justify-content: space-between;
+    }
+    .stages__item--image{
+        max-height: 255px;
+    }
 }

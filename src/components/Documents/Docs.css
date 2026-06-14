@@ -156,3 +156,8 @@
 
     }
 }
+@media (max-width: 400px) {
+    .docs-wrapper__tab {
+        padding: 7px 25px;
+    }
+}

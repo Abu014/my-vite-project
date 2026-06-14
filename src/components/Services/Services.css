@@ -143,6 +143,6 @@
         padding-left: 24px;
     }
     .services__btn {
-        max-width: 100%;
+        display: none;
     }
 }
