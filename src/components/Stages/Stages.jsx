@@ -77,7 +77,7 @@ const Stages = () => {
                             .join(' ');
 
                         return (
-                            <div key={item.id} className={itemClass}>
+                                <div key={item.id} className={itemClass}>
                                 {item.type === 'image' ? (
                                     <img className="stages__image" src={item.image} alt={`Этап ${item.id}`} />
                                 ) : (
