@@ -61,7 +61,7 @@ const PortfolioWall = () => {
                                                     className="portfolio-wall__img"
                                                 />
                                         <h3 className="portfolio-wall__card-title">{work.title}</h3>
-                                        <div className="portfolio-wall__card-desc">{work.description}
+                                        <div className="portfolio-wall__card-desc">{work.descriptionMainCard}
                                             <button type="button" className="portfolio-wall__card-btn" onClick={() => navigate(`${PORTFOLIO_ITEM_PATH}/${work.id}`)}>Подробнее...</button>
                                         </div>
                                     </article>
@@ -85,7 +85,7 @@ const PortfolioWall = () => {
                                             className="portfolio-wall__img"
                                         />
                                         <h3 className="portfolio-wall__card-title">{work.title}</h3>
-                                        <div className="portfolio-wall__card-desc">{work.description}
+                                        <div className="portfolio-wall__card-desc">{work.descriptionMainCard}
                                             <button type="button" className="portfolio-wall__card-btn" onClick={() => navigate(`${PORTFOLIO_ITEM_PATH}/${work.id}`)}>Подробнее...</button>
                                         </div>
                                     </article>

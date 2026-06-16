@@ -209,3 +209,8 @@
         padding-top:50px;
     }
 }
+@media (max-width: 404px) {
+    .portfolio-wall__tab{
+        padding: 7px 2px;
+    }
+}

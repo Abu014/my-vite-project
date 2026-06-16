@@ -6,7 +6,7 @@ import otherImg1 from '../../assets/mediaBanner.png';
 import otherImg2 from '../../assets/matchPoster.png';
 import otherImg3 from '../../assets/matchAnnouncement.png';
 
-import { SPORT_WORKS } from '../../data/portfolioWorks.js';
+import {OTHER_WORKS, SPORT_WORKS} from '../../data/portfolioWorks.js';
 
 const OTHER_IMAGE = [
     { src: otherImg1, alt: 'Пример работы 1' },
@@ -18,6 +18,8 @@ const PORTFOLIO_PATH = '/portfolio-wall';
 
 const Portfolio = () => {
     const navigate = useNavigate();
+    console.log(SPORT_WORKS);
+
 
     return (
         <section id="portfolio" className="section portfolio fade-up">
@@ -39,9 +41,9 @@ const Portfolio = () => {
             <div className="portfolio-poster">
                     <div className="container">
                     <div className="portfolio-poster-info">
-                            <h3 className="portfolio__project-poster-title itemP1">{SPORT_WORKS[0].title}</h3>
+                            <h3 className="portfolio__project-poster-title itemP1">{SPORT_WORKS[1].title}</h3>
                             <p className="portfolio__project-poster-desc itemP2">
-                                {SPORT_WORKS[0].description}
+                                {SPORT_WORKS[1].description}
                             </p>
                             <img src={SPORT_WORKS[1].cardImage} alt="Пример постера" className="portfolio__img--example itemP3" />
                             <img src={SPORT_WORKS[1].detailImage} alt="Макет постера на iPad Mini" className="portfolio__img--main portfolio__img--main--light itemP4" />
