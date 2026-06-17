@@ -18,7 +18,10 @@ const PORTFOLIO_PATH = '/portfolio-wall';
 
 const Portfolio = () => {
     const navigate = useNavigate();
-    console.log(SPORT_WORKS);
+    const transition =()=>{
+        window.scrollTo(0, 0);
+        navigate(PORTFOLIO_PATH);
+    }
 
 
     return (
@@ -60,7 +63,7 @@ const Portfolio = () => {
                     <button
                         type="button"
                         className="portfolio__other-btn"
-                        onClick={() => navigate(PORTFOLIO_PATH)}
+                        onClick={transition}
                     >
                         Другие работы
                     </button>

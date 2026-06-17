@@ -8,8 +8,8 @@
 /* ---------- Шапка ---------- */
 .portfolio-wall__header {
     display: flex;
-    align-items: center;
-    gap: 8px;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .portfolio-wall__back-btn {
@@ -17,14 +17,15 @@
     border: none;
     cursor: pointer;
     padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: none;
+    color:rgba(176, 176, 180, 1);
+
+
 }
 
-.material-symbols-outlined {
-    color: var(--color-text-secondary);
-    font-size: var(--fs-lg);
+.portfolio-wall__back-btn > span.material-symbols-outlined {
+    color:rgba(176, 176, 180, 1);
+    font-size:12px ;
     font-weight: 700;
     line-height: 1;
 }
@@ -182,10 +183,12 @@
     }
     .portfolio-wall__title{
         font-size: 28px;
+        padding-bottom: 20px;
     }
-    .material-symbols-outlined{
-        font-size: 20px;
 
+    .portfolio-wall__back-btn{
+        display: flex;
+        align-items: center;
 
     }
     .portfolio-wall__tabs{

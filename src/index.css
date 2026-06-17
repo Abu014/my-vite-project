@@ -258,7 +258,8 @@ body {
 .main-radius{
     border-radius: 20px;
 }
-
-
+ul {
+    list-style-position: inside;
+}
 
 

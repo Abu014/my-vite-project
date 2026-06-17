@@ -17,14 +17,20 @@ const PortfolioWall = () => {
     const handleBack = () => {
         navigate('/');
     };
+    const spotTranslation = (work)=>{
+        window.scrollTo(0, 0);
+
+        navigate(`${PORTFOLIO_ITEM_PATH}/${work.id}`)
+    }
 
     return (
         <section className="section portfolio-wall">
             <div className="container portfolio-wall__container">
                 <div className="portfolio-wall__header">
-                    <button onClick={handleBack} className="portfolio-wall__back-btn" aria-label="Назад">
-                        <span className="material-symbols-outlined">arrow_back_ios</span>
-                    </button>
+                        <button onClick={handleBack} className="portfolio-wall__back-btn" aria-label="Назад">
+                            <span className="material-symbols-outlined">arrow_back_ios</span>
+                            <p>Назад</p>
+                        </button>
                     <h2 className="portfolio-wall__title">Портфолио</h2>
                 </div>
 
@@ -62,7 +68,7 @@ const PortfolioWall = () => {
                                                 />
                                         <h3 className="portfolio-wall__card-title">{work.title}</h3>
                                         <div className="portfolio-wall__card-desc">{work.descriptionMainCard}
-                                            <button type="button" className="portfolio-wall__card-btn" onClick={() => navigate(`${PORTFOLIO_ITEM_PATH}/${work.id}`)}>Подробнее...</button>
+                                            <button type="button" className="portfolio-wall__card-btn" onClick={() => spotTranslation(work)}>Подробнее...</button>
                                         </div>
                                     </article>
                                 ))}
@@ -86,7 +92,7 @@ const PortfolioWall = () => {
                                         />
                                         <h3 className="portfolio-wall__card-title">{work.title}</h3>
                                         <div className="portfolio-wall__card-desc">{work.descriptionMainCard}
-                                            <button type="button" className="portfolio-wall__card-btn" onClick={() => navigate(`${PORTFOLIO_ITEM_PATH}/${work.id}`)}>Подробнее...</button>
+                                            <button type="button" className="portfolio-wall__card-btn" onClick={() => spotTranslation(work)}>Подробнее...</button>
                                         </div>
                                     </article>
                                 ))}

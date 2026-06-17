@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import "./Docs.css"
+import dogovor from "../../assets/Dogovor.pdf"
 
 const TABS = [
     { id: '1', label: 'Бриф', shortLabel: 'Бриф' },
@@ -39,11 +40,18 @@ const TAB_CONTENT = [
                 textDesc: ['Нужна ли дальнейшая поддержка?','Есть ли особые пожелания или ограничения?']},
             { id:9,
                 textTitle: 'Завершающий вопрос (очень важный)',
-                textDesc: ['Какой результат вы считаете успешным?(например: рост вовлечённости, узнаваемость, продажи, стиль команды)']},
+                textDesc: ['Какой результат вы считаете успешным?(например: рост вовлечённости, узнаваемость, продажи, стиль команды)']}
+
+
 
 
 
         ],
+         lastDesc:{
+             lastDescTitle:' Завершающий вопрос (очень важный)',
+             lastDescText:'Какой результат вы считаете успешным?(например: рост вовлечённости, узнаваемость, продажи, стиль команды)'
+
+         }
     },
     {   id:2,
         title: 'Условия оплаты',
@@ -73,16 +81,22 @@ const TAB_CONTENT = [
                 textTitle: 'Важно',
                 textDesc: ['Начало работы означает согласие с условиями.']},
         ],
+        lastDesc:{
+            lastDescTitle:' Важно',
+            lastDescText:'Начало работы означает согласие с условиями.'
+
+        }
 
     },
 
     {   id:3,
         title: 'Договор на оказание услуг',
-        description: [],
+        pdfUrl: dogovor
     },
     {   id:4,
         title: 'Диплом',
         description: [] ,
+        pdfUrl: '/documents/diplom.pdf'
     },
 ];
 
@@ -123,18 +137,40 @@ const Docs = () => {
                         >
                             <h3 className="docs__panel-title">{activeContent.title}</h3>
 
-                            <ol className="docs__panel-description">
-                                {activeContent.description.map((section) => (
-                                    <li key={section.id} className="docs__panel-description__title">
-                                        {section.textTitle}
-                                        <ul className="docs__panel-desc">
-                                            {section.textDesc.map((item, index) => (
-                                                <li key={index}>{item}</li>
+                            {activeContent.pdfUrl ? (
+                                <div className="docs__pdf-wrapper">
+                                    <a href={activeContent.pdfUrl} target="_blank" rel="noopener noreferrer">
+                                        Открыть PDF
+                                    </a>
+                                </div>
+                            ) : (
+                                // Обычный контент
+                                <>
+                                    {activeContent.description?.length > 0 && (
+                                        <ol className="docs__panel-description">
+                                            {activeContent.description.map((section) => (
+                                                <li key={section.id} className="docs__panel-description__title">
+                                                    {section.textTitle}
+                                                    <ul className="docs__panel-desc">
+                                                        {section.textDesc.map((item, index) => (
+                                                            <li key={index}>{item}</li>
+                                                        ))}
+                                                    </ul>
+                                                </li>
                                             ))}
-                                        </ul>
-                                    </li>
-                                ))}
-                            </ol>
+                                        </ol>
+
+                                    )}
+                                    {activeContent.lastDesc && (
+                                        <div className="docs__panel-last">
+                                            <p className="docs__panel-last-title">{activeContent.lastDesc.lastDescTitle}</p>
+                                            <p className="docs__panel-last-desc">{activeContent.lastDesc.lastDescText}</p>
+                                        </div>
+                                    )}
+
+
+                                </>
+                            )}
                         </div>
                     )}
                 </div>
