@@ -12,7 +12,7 @@ const PortfolioItem = () => {
     const navigate = useNavigate();
 
 
-    const isOtherWork = work?.id.startsWith('other-'); // или любое другое условие
+    const isOtherWork = work?.id?.startsWith('other-'); // или любое другое условие
 
     if (!work) return <div>Проект не найден</div>;
     const handleBack = () => {
@@ -55,7 +55,7 @@ const PortfolioItem = () => {
                         )}
 
                     </div>
-                    {isOtherWork && (
+                    {isOtherWork && work?.actionButton?.url && (
                         <div className="portfolio-item__content__thumbnail-wrapper">
                             <img
                                 src={work.thumbnail}
