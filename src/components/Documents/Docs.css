@@ -67,7 +67,7 @@
 .docs__panel-title{
     color: var(--color-text-secondary);
     font-weight: 600;
-    font-size: 64px;
+    font-size: 48px;
     padding-bottom: 50px;
 
     .docs-wrapper__title{
@@ -119,6 +119,14 @@
     font-size: 32px;
     letter-spacing: 1%;
 
+}
+.docs__pdf-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.docs__pdf-image{
+    max-width: 689px;
 }
 @media (max-width: 480px) {
 
@@ -189,9 +197,17 @@
         font-size: 16px;
 
     }
+    .docs__pdf-image{
+        max-width: 100%;
+
+    }
 }
 @media (max-width: 400px) {
     .docs-wrapper__tab {
         padding: 7px 25px;
+    }
+    .docs__pdf-image{
+        max-width: 100%;
+
     }
 }

@@ -1,0 +1,129 @@
+.price{
+    background: var(--color-bg-dark);
+    margin-top: calc(-1 * var(--header-height));
+    padding-top: var(--header-height);
+}
+.price__container{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+}
+.price__title{
+    color: var(--color-text-light);
+    font-weight: 700;
+    font-size: 64px;
+}
+.price__body{
+    padding-inline: 110px;   /* все дочерние элементы получают отступы автоматически */
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.price__content{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+}
+.item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item_desc{
+    font-weight: 300;
+    font-size: 34px;
+    color: var(--color-text-light);
+
+}
+.item_price{
+    font-weight: 300;
+    font-size: 34px;
+    color: rgba(230, 255, 42, 1);
+
+
+}
+.item__price-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;   /* прижимаем содержимое к правому краю */
+    text-align: right;       /* на случай, если текст переносится */
+}
+
+.item_note {
+    font-weight: 300;
+    font-size: 24px;         /* или меньше – подберите нужный размер */
+    color:rgba(230, 255, 42, 1)   ; margin-top: 4px;         /* небольшой отступ от цены */
+}
+.price__line{
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 1);
+
+}
+.price__hourly-rate{
+    display: flex;
+    justify-content: space-between;
+}
+.price__barcode{
+    display: flex;
+    align-items: flex-end;
+    gap: 84px;
+
+}
+.price__barcode-title{
+    font-weight: 300;
+    font-size: 34px;
+    color: var(--color-text-light);
+    text-align: left;
+    padding-right: 80px;
+
+}
+@media (max-width: 480px){
+    .price{
+        padding-inline: 16px;
+    }
+    .price__title{
+        padding-top: 30px;
+        font-weight: 600;
+        font-size: 28px;
+
+    }
+    .price__body{
+        padding-inline: 0;
+    }
+    .price__content{
+        gap: 30px;
+    }
+    .item_desc{
+        max-width:250px;
+        font-weight: 300;
+        font-size: 20px;
+
+    }
+    .item_price{
+        font-weight: 300;
+        font-size: 20px;
+
+    }
+    .item{
+        gap: 50px;
+        align-items: flex-end;
+
+    }
+    .price__barcode{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .price__barcode-title{
+        padding-right: 0;
+        font-weight: 400;
+        font-size: 20px;
+
+
+    }
+
+}

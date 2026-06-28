@@ -1,5 +1,5 @@
 import './Services.css';
-import {useScrollTo} from "../hooks/useScrollTo.js";
+import {useNavigate} from "react-router-dom";
 
 const SERVICES_LIST = [
     {
@@ -28,9 +28,13 @@ const SERVICES_LIST = [
         description: 'Дизайн формы, фан-продукции, капсульных коллекций и упаковки.',
     },
 ];
-
+const PRICE_PATH = '/price'
 const Services = () => {
-    const scrollTo = useScrollTo();
+    const navigate = useNavigate();
+    const transition =()=>{
+        window.scrollTo(0, 0);
+        navigate(PRICE_PATH);
+    }
     return (
         <section id="services" className="section services fade-right">
             <div className="services__container container">
@@ -45,8 +49,8 @@ const Services = () => {
                     ))}
                 </ul>
 
-                <button className="services__btn" type="button" onClick={() => scrollTo('contacts')}>
-                    Связь со мной
+                <button className="services__btn" type="button" onClick={transition}>
+                    Стоимость
                 </button>
             </div>
         </section>

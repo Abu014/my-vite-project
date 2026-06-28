@@ -1,6 +1,10 @@
 import React, {useState} from 'react';
 import "./Docs.css"
 import dogovor from "../../assets/Dogovor.pdf"
+import certificate_image from "../../assets/certificate.jpg"
+import certificate_PDF from "../../assets/certificate.pdf"
+
+
 
 const TABS = [
     { id: '1', label: 'Бриф', shortLabel: 'Бриф' },
@@ -95,8 +99,9 @@ const TAB_CONTENT = [
     },
     {   id:4,
         title: 'Диплом',
-        description: [] ,
-        pdfUrl: '/documents/diplom.pdf'
+        description: certificate_image ,
+        pdfUrl: certificate_PDF,
+        imageUrl: certificate_image,
     },
 ];
 
@@ -139,6 +144,7 @@ const Docs = () => {
 
                             {activeContent.pdfUrl ? (
                                 <div className="docs__pdf-wrapper">
+                                    {activeContent.imageUrl && <img src={activeContent.imageUrl} alt="PDF preview" className="docs__pdf-image" />}
                                     <a href={activeContent.pdfUrl} target="_blank" rel="noopener noreferrer">
                                         Открыть PDF
                                     </a>
