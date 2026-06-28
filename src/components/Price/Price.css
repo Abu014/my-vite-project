@@ -28,8 +28,8 @@
 }
 .item{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
 }
 .item_desc{
     font-weight: 300;
@@ -46,15 +46,15 @@
 }
 .item__price-wrapper {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;   /* прижимаем содержимое к правому краю */
-    text-align: right;       /* на случай, если текст переносится */
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 .item_note {
+    text-align: right;
     font-weight: 300;
     font-size: 24px;         /* или меньше – подберите нужный размер */
-    color:rgba(230, 255, 42, 1)   ; margin-top: 4px;         /* небольшой отступ от цены */
+    color:rgba(230, 255, 42, 1)   ;
 }
 .price__line{
     width: 100%;
@@ -83,12 +83,16 @@
 @media (max-width: 480px){
     .price{
         padding-inline: 16px;
+        gap: 30px;
     }
     .price__title{
         padding-top: 30px;
         font-weight: 600;
         font-size: 28px;
 
+    }
+    .price__container{
+        gap: 30px;
     }
     .price__body{
         padding-inline: 0;
@@ -107,11 +111,10 @@
         font-size: 20px;
 
     }
-    .item{
-        gap: 50px;
-        align-items: flex-end;
-
+    .item_note {
+        font-size: 14px; /* или меньше */
     }
+
     .price__barcode{
         display: flex;
         flex-direction: column;
@@ -125,5 +128,6 @@
 
 
     }
+
 
 }

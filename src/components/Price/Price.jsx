@@ -12,11 +12,12 @@ const Price = () => {
                     <div className="price__content">
                         {PRICE_WORKS.map((item) => (
                             <div className="item" key={item.id}>
-                                <p className="item_desc">{item.priceDesc}</p>
                                 <div className="item__price-wrapper">
+                                    <p className="item_desc">{item.priceDesc}</p>
                                     <p className="item_price">{item.price}</p>
-                                    {item.note && <p className="item_note">{item.note}</p>}
                                 </div>
+                                {item.note && <p className="item_note">{item.note}</p>}
+
                             </div>
                         ))}
                     </div>
