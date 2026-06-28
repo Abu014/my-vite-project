@@ -42,7 +42,7 @@ const Header = () => {
             if (location.pathname === '/') {
                 scrollToSection(sectionId);
             } else {
-                navigate(`/#${sectionId}`);
+                    navigate(`/#${sectionId}`);
             }
         }
         setIsMenuOpen(false);

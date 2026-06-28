@@ -2,8 +2,18 @@ import React from 'react';
 import './Price.css';
 import { PRICE_WORKS } from '../../data/portfolioWorks.js';
 import barcode from '../../assets/barcode.svg';
+import {useNavigate} from "react-router-dom";
+
+
+
 
 const Price = () => {
+    const navigate = useNavigate();
+    const transition =()=>{
+        window.scrollTo(0, 0);
+        navigate("/#contacts")
+    }
+
     return (
         <section id="price" className="section price">
             <div className="container price__container">
@@ -30,7 +40,7 @@ const Price = () => {
                         <p className="price__barcode-title">
                             Готов рассмотреть предложения о работе в спортивной индустрии — в составе команды, студии или в качестве штатного графического дизайнера.
                         </p>
-                        <img className="barcode" src={barcode} alt="" />
+                        <button className="price__barcode-btn" onClick={transition}><img className="barcode" src={barcode} alt="" /></button>
                     </div>
                 </div>
             </div>
